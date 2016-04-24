@@ -43,7 +43,7 @@ GitHub PagesとJekyllの組み合わせでどうサイトが作れるかは[Abou
 
 ## github.com上にGitHub Pagesのリポジトリを作成する
 
-[GitGub Pagesについてもっと知る](https://pages.github.com)ためのページに行って言われるままに手を動かしていく。
+[GitHub Pagesについてもっと知る](https://pages.github.com)ためのページに行って言われるままに手を動かしていく。
 
 サイトには`User or organization site`と`Project site`の2種類あって、`Project site`は公開のリポジトリをサイト化するものらしい(後で検討)。`User or organization site`が今回の目的に合致した道だ。
 
