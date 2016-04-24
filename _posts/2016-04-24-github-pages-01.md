@@ -200,6 +200,6 @@ drwxr-xr-x css
 
 
 
-***→ 「[GitHub Pages導入: OS Xから作成](github-pages-01.html)」へ続く***
+***→ 「[GitHub Pages導入: DebianにRuby 2.x.xを導入してローカル環境作成](github-pages-02.html)」へ続く***
 
 
