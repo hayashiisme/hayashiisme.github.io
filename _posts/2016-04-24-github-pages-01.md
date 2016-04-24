@@ -5,19 +5,20 @@ date:   2016-04-24 19:21:00 +0900
 categories: github-pages install
 ---
 
-## cloneしてローカルでjekyllを導入
+次は、"[Setting up your GitHub Pages site locally with Jekyll](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/)"である。
 
 
-``````````````````````````````
+## Jekyll付きのGitHub Pagesをローカルで設営する
 
-$ cd GitHub
+前述の通り、Jekyllを動かすには、Ruby 2.0.0 or higherがインストールされていないといけない。
+また言われるままに手を動かす。
 
-$ git clone https://github.com/hayashiisme/hayashiisme.github.io.git
-Cloning into 'hayashiisme.github.io'...
-remote: Counting objects: 3, done.
-remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
-Unpacking objects: 100% (3/3), done.
-Checking connectivity... done.
+
+### Bundlerをインストール
+
+要sudoだった。
+
+`````````````````````````````
 
 # sudo gem install bundler
 Fetching: bundler-1.11.2.gem (100%)
@@ -26,14 +27,32 @@ Parsing documentation for bundler-1.11.2
 Installing ri documentation for bundler-1.11.2
 1 gem installed
 
+`````````````````````````````
 
-$ bundle install
+### BundlerでJekyllをインストール
+
+`~/username.github.io`に`Gemfile`を作って中に以下を書く。
+
+
+`````````````````````````````````````````
+
+source 'https://rubygems.org'
+gem 'github-pages', group: :jekyll_plugins
+
+
+`````````````````````````````````````````
+
+ターミナル作業。
+
+
+````````````````````````````````````````````
+
+~/username.github.io $ bundle install
 Fetching gem metadata from https://rubygems.org/............
 Fetching version metadata from https://rubygems.org/...
 Fetching dependency metadata from https://rubygems.org/..
 Resolving dependencies.......
 Rubygems 2.0.14 is not threadsafe, so your gems will be installed one at a time. Upgrade to Rubygems 2.1.0 or higher to enable parallel gem installation.
-
 
 Your user account isn't allowed to install to the system Rubygems.
   You can cancel this installation and run:
@@ -43,7 +62,7 @@ Your user account isn't allowed to install to the system Rubygems.
   to install the gems into ./vendor/bundle/, or you can enter your password
   and install the bundled gems to Rubygems using sudo.
 
-  Password: 
+(パスワード入力)
 Installing RedCloth 4.2.9 with native extensions
 Installing i18n 0.7.0
 Installing json 1.8.3 with native extensions
@@ -115,14 +134,24 @@ includes some breaking changes. More information:
 https://github.com/blog/2100-github-pages-jekyll-3
 ---------------------------------------------------
 
-$ bundle exec jekyll new . --force
+
+``````````````````````````````````
+
+
+
+
+``````````````````````````````````
+
+~/username.github.io $ bundle exec jekyll new . --force
 New jekyll site installed in /Users/hayashiisme/GitHub/hayashiisme.github.io. 
 
-`````````````````````````````````````````
+``````````````````````````````````
+
 
 以下のようなフォルダ構成ができあがる。
 
-``````````````````````````````````````````
+
+``````````````````````````````````
 
 -rw-r--r-- Gemfile
 -rw-r--r-- Gemfile.lock
@@ -136,18 +165,37 @@ drwxr-xr-x css
 -rw-r--r-- feed.xml
 -rw-r--r-- index.html
 
-``````````````````````````````````````````
+``````````````````````````````````
 
 コンテンツをどう作成するかは置いといて、ローカルでサーバを立ちあげてサイトを確認する。
 
-``````````````````````````````````````````
 
-$ bundle exec jekyll serve
+``````````````````````````````````
+
+~/username.github.io $ bundle exec jekyll serve
     Server address: http://127.0.0.1:4000/
   Server running... press ctrl-c to stop.
 
+``````````````````````````````````
 
-``````````````````````````````````````````
+## GitHub Pagesにプッシュ
 
+いつもの手順。
+
+
+``````````````````````````````````
+
+~/username.github.io $ git add -A
+~/username.github.io $ git commit -am "comment"
+~/username.github.io $ git push
+
+
+``````````````````````````````````
+
+`http://username.github.io/`で確認できる。
+
+
+
+***→ 「[GitHub Pages導入: OS Xから作成](github-pages-01.html)」へ続く***
 
 
