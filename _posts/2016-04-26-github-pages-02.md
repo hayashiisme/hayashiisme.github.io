@@ -1468,6 +1468,7 @@ Generating RI format into /home/hayashiisme/src/ruby-2.3.0/.ext/rdoc...
 
 
 
-***→ 「[GitHub Pages導入: ](github-pages-.html)」へ続く***
+***→ 「[GitHub Pages導入: Windowsでの環境構築](github-pages-03.html)」へ続く***
 
+Qiitaにストックした記事をベースに手を動かす。
 
