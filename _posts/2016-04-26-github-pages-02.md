@@ -1,14 +1,30 @@
 ---
 layout: post
-title:  "GitHub Pages導入: OS Xから作成"
-date:   2016-04-24 19:21:00 +0900
+title:  "GitHub Pages導入: DebianにRuby 2.x.xを導入してローカル環境作成"
+date:   2016-04-26 09:00:00 +0900
 categories: github-pages install
 ---
 
+これはJekyllというよりRubyのハナシで単にRubyを使っていないから必要になるトピックかもしれないが、というわけだが、ここは今後のためにもいろいろ見ながらということで。
 
-hayashiisme@lydian:~/src/ruby-2.3.0$ ./configure --with-openssl-dir=/usr/local/openssl --enable-shared
+そもそもなんでDebian/Ubuntuのデフォルトのapt-getで古いRubyしかインストールされないのかというのが気になるが。
+
+Rubyサイトの「[Rubyのインストール](https://www.ruby-lang.org/ja/documentation/installation/)」によれば、
+
+>Ruby コミュニティの中の一部のメンバーは Ruby をインストールするのに、 パッケージマネージャを使わず、代わりに専用のツールを使うべきであると強く考えています。 その利点・欠点を詳述するのはこのページの範囲から逸脱するため割愛しますが、 最大の理由は大半のパッケージマネージャは公式リポジトリに古いバージョンの Ruby しかないからです。 もしあなたが新しい Ruby を使いたければ、パッケージ名が正しいか確認するか、 上述した専用ツールを使ってください。
+
+さらに、
+
+>しかしながら、サードパーティ製ツールかパッケージマネージャを使う方が良い考えです。 何故なら、ソースからインストールされた Ruby はどのツールからも管理されないからです。
+
+とあるのだが、ここは取りあえずということでソースからインストールしてしまう。
+Jekyll以外でRubyとつきあことがあれば考えよう、それもlearning by doingで。
+
+````````````````````````
+
+$ ./configure --with-openssl-dir=/usr/local/openssl --enable-shared
 checking for ruby... /usr/local/bin/ruby
-*** using http instead of https ***
+*** using http instead of https ***					← 気になる
 config.guess already exists
 *** using http instead of https ***
 config.sub already exists
@@ -585,7 +601,8 @@ configure: creating ./config.status
 config.status: creating GNUmakefile
 config.status: creating Makefile
 config.status: creating ruby-2.3.pc
-hayashiisme@lydian:~/src/ruby-2.3.0$ make
+
+$ make
 	CC = gcc
 	LD = ld
 	LDSHARED = gcc -shared
@@ -902,7 +919,7 @@ configuring mathn/complex
 configuring mathn/rational
 configuring nkf
 configuring objspace
-configuring openssl
+configuring openssl					← これ
 configuring pathname
 configuring psych
 configuring pty
@@ -1293,7 +1310,7 @@ compiling objspace_dump.c
 compiling object_tracing.c
 linking shared-object objspace.so
 make[2]: ディレクトリ `/home/hayashiisme/src/ruby-2.3.0/ext/objspace' から出ます
-make[2]: ディレクトリ `/home/hayashiisme/src/ruby-2.3.0/ext/openssl' に入ります
+make[2]: ディレクトリ `/home/hayashiisme/src/ruby-2.3.0/ext/openssl' に入ります		← これ
 compiling ossl_ssl.c
 compiling ossl_config.c
 compiling ossl_digest.c
@@ -1446,8 +1463,8 @@ Generating RI format into /home/hayashiisme/src/ruby-2.3.0/.ext/rdoc...
 
   Elapsed: 216.6s
 
-hayashiisme@lydian:~/src/ruby-2.3.0$ 
 
+````````````````````````
 
 
 
