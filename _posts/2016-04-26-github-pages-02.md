@@ -5,7 +5,7 @@ date:   2016-04-26 09:00:00 +0900
 categories: github-pages install
 ---
 
-これはJekyllというよりRubyのハナシで単にRubyを使っていないから必要になるトピックかもしれないが、というわけだが、ここは今後のためにもいろいろ見ながらということで。
+これはJekyllというよりRubyのハナシで単にRubyを使っていないから必要になるトピックかもしれないが、ここは今後のためにもいろいろ見ながらということで。
 
 そもそもなんでDebian/Ubuntuのデフォルトのapt-getで古いRubyしかインストールされないのかというのが気になるが。
 
@@ -32,6 +32,13 @@ checking build system type... x86_64-pc-linux-gnu
 checking host system type... x86_64-pc-linux-gnu
 checking target system type... x86_64-pc-linux-gnu
 checking for gcc... gcc
+
+````````````````````````
+
+と延々ときて、
+
+<!--
+
 checking whether the C compiler works... yes
 checking for C compiler default output file name... a.out
 checking for suffix of executables... 
@@ -593,6 +600,11 @@ checking for prefix of external symbols... NONE
 checking pthread.h usability... yes
 checking pthread.h presence... yes
 checking for pthread.h... yes
+
+-->
+
+````````````````````````
+
 checking if make is GNU make... yes
 checking for nroff... /usr/bin/nroff
 .ext/include/x86_64-linux/ruby/config.h updated
@@ -620,6 +632,12 @@ Thread model: posix
 gcc version 4.7.2 (Debian 4.7.2-5) 
 compiling main.c
 compiling dmydln.c
+
+````````````````````````
+
+と受けて、
+
+<!--
 compiling miniinit.c
 compiling dmyext.c
 compiling miniprelude.c
@@ -1444,6 +1462,11 @@ linking shared-library libruby.so.2.3.0
 linking ruby
 make[2]: ディレクトリ `/home/hayashiisme/src/ruby-2.3.0' から出ます
 make[1]: ディレクトリ `/home/hayashiisme/src/ruby-2.3.0' から出ます
+-->
+
+
+````````````````````````
+
 Generating RDoc documentation
 Parsing sources...
 100% [944/944]  vsnprintf.c                                                                    
@@ -1466,6 +1489,15 @@ Generating RI format into /home/hayashiisme/src/ruby-2.3.0/.ext/rdoc...
 
 ````````````````````````
 
+で、
+
+````````````````````````
+
+$ make install
+
+````````````````````````
+
+で終了。
 
 
 ***→ 「[GitHub Pages導入: Windowsでの環境構築](github-pages-03.html)」へ続く***
