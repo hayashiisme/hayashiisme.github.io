@@ -198,6 +198,8 @@ drwxr-xr-x css
 
 `http://username.github.io/`で確認できる。
 
+まずは無事な滑り出し。
+
 ***→ 「[GitHub Pages導入: DebianにRuby 2.x.xを導入してローカル環境作成](github-pages-02.html)」へ続く***
 
 
