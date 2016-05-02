@@ -1499,6 +1499,10 @@ $ make install
 
 で終了。
 
+## ローカルリポジトリでも作成コンテンツの確認
+
+(いま書いてるとこ)
+
 
 ***→ 「[GitHub Pages導入: Windowsでの環境構築](github-pages-03.html)」へ続く***
 
