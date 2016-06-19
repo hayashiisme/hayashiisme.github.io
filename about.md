@@ -1,8 +1,10 @@
 ---
 layout: page
-title: "Learning by Doing Jekyll" について
+title: about
 permalink: /about/
 ---
+
+# "Learning by Doing Jekyll" について
 
 勉強にはやってみるのが一番。
 JekyllやってみるならGitHub Pagesでが早そう。
