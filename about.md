@@ -1,8 +1,14 @@
 ---
 layout: page
-title: About
+title: "Learning by Doing Jekyll" について
 permalink: /about/
 ---
+
+勉強にはやってみるのが一番。
+JekyllやってみるならGitHub Pagesでが早そう。
+というわけで作ってみました。
+Learning by Doing, My Ordinary Process for Everything.
+
 
 This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
 
